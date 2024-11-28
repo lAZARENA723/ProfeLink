@@ -1,0 +1,539 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ProfeLink - Encuentra tu profesor ideal</title>
+    <style>
+        body {
+            font-family: Verdana, Geneva, Tahoma, sans-serif;
+            margin: 0;
+            padding: 0;
+            color: #333;
+            line-height: 1.6;
+        }
+
+        .container {
+            width: 90%;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        h1, h2, h3 {
+            margin: 0 0 15px;
+        }
+
+        p {
+            margin: 0 0 15px;
+        }
+
+        .hero {
+            background: #f5c0dc;
+            color: #2575fc;
+            text-align: center;
+            padding: 50px 20px;
+            animation: fadeIn 2s ease-out;
+        }
+
+        .hero h1 {
+            font-size: 2.5rem;
+            margin-bottom: 10px;
+        }
+
+        .hero p {
+            font-size: 1.2rem;
+            margin-bottom: 20px;
+        }
+
+        .hero .btn {
+            background: #fff;
+            color: #2575fc;
+            padding: 10px 20px;
+            text-decoration: none;
+            border-radius: 5px;
+            font-weight: bold;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+        }
+
+        .hero .btn:hover {
+            background: #f5fdff;
+        }
+
+        .about {
+            padding: 40px 20px;
+            background-color: #f5fdff;
+            text-align: center;
+        }
+
+        .about h2 {
+            color: #2575fc;
+        }
+
+        .benefits {
+            background: #f5fdff;
+            padding: 40px 20px;
+        }
+
+        .benefits .grid {
+            display: flex;
+            gap: 20px;
+            flex-wrap: wrap;
+            justify-content: space-around;
+        }
+
+        .benefits .card {
+            background: white;
+            padding: 20px;
+            border-radius: 40px;
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+            width: 300px;
+            text-align: center;
+            transition: transform 0.3s ease-in-out;
+        }
+
+        .benefits .card:hover {
+            transform: translateY(-10px);
+        }
+
+        .benefits .card img {
+            max-width: 80px;
+            margin-bottom: 10px;
+        }
+
+        .testimonials {
+            padding: 40px 20px;
+            background: #f5fdff;
+            text-align: center;
+        }
+
+        .testimonials .testimonial {
+            margin-bottom: 20px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            flex-direction: column;
+        }
+
+        .testimonials .testimonial img {
+            width: 80px;
+            height: 80px;
+            border-radius: 50%;
+            object-fit: cover;
+            margin-bottom: 10px;
+            transition: transform 0.3s ease-in-out;
+        }
+
+        .testimonials .testimonial img:hover {
+            transform: scale(1.1);
+        }
+
+        .testimonials span {
+            font-style: italic;
+            color: #666;
+        }
+
+        .cta {
+            background: #a0d8f0;
+            color: rgb(20, 61, 173);
+            text-align: center;
+            padding: 40px 20px;
+        }
+
+        .cta .btn {
+            background: #fff;
+            color: #0c285a;
+            padding: 10px 20px;
+            text-decoration: none;
+            border-radius: 5px;
+            font-weight: bold;
+        }
+
+        .cta .btn:hover {
+            background: #ddd;
+        }
+
+        .footer {
+            background: #333;
+            color: white;
+            text-align: center;
+            padding: 20px;
+        }
+
+        .footer .social-links a {
+            color: #fff;
+            margin: 0 10px;
+            text-decoration: none;
+        }
+
+        .footer .social-links a:hover {
+            text-decoration: underline;
+        }
+
+        @keyframes fadeIn {
+            from {
+                opacity: 0;
+            }
+
+            to {
+                opacity: 1;
+            }
+        }
+
+
+        .faq {
+            padding: 40px 20px;
+            background: #f5fdff;
+            text-align: center;
+        }
+
+        .faq h2 {
+            color: #2575fc;
+            margin-bottom: 30px;
+        }
+
+        .faq-item {
+            background: #fff;
+            border-radius: 10px;
+            margin: 10px auto;
+            padding: 20px;
+            width: 80%;
+            max-width: 900px;
+            text-align: left;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+            transition: transform 0.3s ease-in-out;
+        }
+
+        .faq-item:hover {
+            transform: translateY(-5px);
+        }
+
+        .faq-item h3 {
+            font-size: 1.4rem;
+            color: #2575fc;
+        }
+
+        .faq-item p {
+            font-size: 1.1rem;
+            color: #666;
+        }
+
+        .contact {
+    padding: 40px 20px;
+    background-color: #f5fdff;
+    text-align: center;
+}
+
+.contact h2 {
+    color: #2575fc;
+    font-size: 2rem;
+    margin-bottom: 20px;
+}
+
+.contact form {
+    max-width: 600px;
+    margin: 0 auto;
+    background: white;
+    padding: 30px;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.contact form input,
+.contact form textarea {
+    width: 100%;
+    margin-bottom: 15px;
+    padding: 10px;
+    font-size: 1rem;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    outline: none;
+    transition: border-color 0.3s ease;
+}
+
+.contact form input:focus,
+.contact form textarea:focus {
+    border-color: #2575fc;
+}
+
+.contact form button {
+    width: 100%;
+    padding: 10px 15px;
+    font-size: 1.2rem;
+    color: white;
+    background-color: #2575fc;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s ease, transform 0.2s ease;
+}
+
+.contact form button:hover {
+    background-color: #0c285a;
+    transform: translateY(-2px);
+}
+
+.contact form button:active {
+    transform: translateY(0);
+}
+
+.team {
+    padding: 40px 20px;
+    background-color: #f5fdff;
+    text-align: center;
+}
+
+.team h2 {
+    color: #2575fc;
+    margin-bottom: 20px;
+    font-size: 2rem;
+}
+
+.team p {
+    font-size: 1.2rem;
+    color: #666;
+    margin-bottom: 30px;
+    max-width: 800px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.team-members {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 20px;
+}
+
+.member {
+    background: white;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    text-align: center;
+    width: 250px;
+}
+
+.member img {
+    width: 100px;
+    height: 100px;
+    border-radius: 50%;
+    object-fit: cover;
+    margin-bottom: 10px;
+}
+
+.member h3 {
+    color: #2575fc;
+    margin-bottom: 5px;
+}
+
+.member p {
+    font-size: 1rem;
+    color: #666;
+}
+
+    .trust {
+        padding: 40px 20px;
+        background: #f5fdff;
+        text-align: center;
+    }
+
+    .trust h2 {
+        color: #2575fc;
+        margin-bottom: 20px;
+        font-size: 2rem;
+    }
+
+    .trust p {
+        font-size: 1.2rem;
+        color: #666;
+        margin-bottom: 30px;
+    }
+
+    .trust-logos {
+        display: flex;
+        justify-content: center;
+        flex-wrap: wrap;
+        gap: 20px;
+    }
+
+    .logo-item {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        text-align: center;
+    }
+
+    .logo-item img {
+        max-width: 150px;
+        height: auto;
+        object-fit: contain;
+        margin-bottom: 10px;
+        transition: transform 0.3s ease-in-out;
+    }
+
+    .logo-item img:hover {
+        transform: scale(1.1);
+    }
+
+    .logo-item p {
+        font-size: 1rem;
+        color: #666;
+    }
+
+
+</style>
+</style>
+
+    </style>
+</head>
+
+<body>
+    <header class="hero">
+        <h1>ProfeLink</h1>
+        <p>Encuentra el profesor perfecto para ti. Clases personalizadas a un clic.</p>
+        <a href="#cta" class="btn">Descargar Ahora</a>
+    </header>
+
+    <section class="about">
+        <div class="container">
+            <h2>¿Qué es ProfeLink?</h2>
+            <p>Es un sitio donde puedes buscar a los mejores profesores para cualquier materia. La plataforma te permite elegir el profesor que mejor se adapte a lo que necesitas y coordinar tus clases en el momento y lugar que más te convenga.</p>
+        </div>
+    </section>
+
+    <section class="benefits">
+        <div class="container">
+            <h2>Beneficios de Usar ProfeLink</h2>
+            <div class="grid">
+                <div class="card">
+                    <img src="Imagenes/libros.gif" alt="Clases personalizadas">
+                    <h3>Clases personalizadas</h3>
+                    <p>Diseñadas para que puedas aprender a tu propio ritmo y según tus necesidades.</p>
+                </div>
+                <div class="card">
+                    <img src="Imagenes/apoyo-tecnico.gif" alt="Modalidad flexible">
+                    <h3>Modalidad flexible</h3>
+                    <p>Elige entre clases presenciales o virtuales, según lo que te quede más cómodo.</p>
+                </div>
+                <div class="card">
+                    <img src="Imagenes/bolsa-de-dinero.gif" alt="Precios accesibles">
+                    <h3>Precios accesibles</h3>
+                    <p>Disfruta de educación de calidad a un costo que se adapta a tu presupuesto.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="testimonials">
+        <div class="container">
+            <h2>Testimonios</h2>
+            <div class="testimonial">
+                <img src="Imagenes/agustin.png" alt="Agustin Chavarri" class="testimonial-img">
+                <p>"Gracias a ProfeLink encontré el mejor profesor de física. ¡Recomendado 100%!"</p>
+                <span>- Agustin Chavarri</span>
+            </div>
+            <div class="testimonial">
+                <img src="Imagenes/tamara.png" alt="Tamara Llanos" class="testimonial-img">
+                <p>"Encontré clases de inglés a un precio genial y con horarios flexibles."</p>
+                <span>- Tamara Llanos</span>
+            </div>
+        </div>
+    </section>
+
+    <section class="faq">
+        <div class="container">
+            <h2>Preguntas Frecuentes</h2>
+            <div class="faq-item">
+                <h3>¿Cómo me registro en ProfeLink?</h3>
+                <p>Simplemente crea una cuenta con tu correo electrónico y comienza a buscar profesores según lo que necesites.</p>
+            </div>
+            <div class="faq-item">
+                <h3>¿Puedo elegir el horario de las clases?</h3>
+                <p>¡Claro! Puedes coordinar con tu profesor el mejor horario para ti.</p>
+            </div>
+            <div class="faq-item">
+                <h3>¿Puedo tomar clases de cualquier materia?</h3>
+                <p>Sí, ofrecemos una amplia variedad de materias, desde matemáticas hasta música y arte.</p>
+            </div>
+        </div>
+    </section>
+    
+    <section class="contact">
+        <div class="container">
+            <h2>Contacto</h2>
+            <form>
+                <input type="text" placeholder="Tu nombre" required>
+                <input type="email" placeholder="Tu correo" required>
+                <textarea placeholder="Tu mensaje" rows="4" required></textarea>
+                <button type="submit">Enviar</button>
+            </form>
+        </div>
+    </section>
+
+    <section class="team">
+        <div class="container">
+            <h2>Sobre Nosotros</h2>
+            <p>ProfeLink es el resultado de la colaboración entre un grupo de amigos universitarios que, apasionados por la educación y la tecnología, 
+                decidieron unirse para hacerla más accesible. Somos un equipo que cree firmemente en el poder de aprender de manera personalizada, y nuestra misión 
+                es conectar estudiantes con los mejores profesores, adaptándonos a sus necesidades y tiempos. Cada uno de nosotros aporta su experiencia, su entusiasmo y su dedicación, 
+                con la ilusión de que esta plataforma pueda hacer una diferencia positiva en la vida de quienes buscan crecer académicamente.</p>
+            <div class="team-members">
+                <div class="member">
+                    <img src="Imagenes/Fundador1.jpeg" alt="Foto del Fundador 1">
+                    <h3>Aguirre Ludmila</h3>
+                    <p>Fundadora y CEO</p>
+                </div>
+                <div class="member">
+                    <img src="Imagenes/Fundador2.jpeg" alt="Foto del Fundador 2">
+                    <h3>Ghiretti Fanco</h3>
+                    <p>Co-Fundador y CTO</p>
+                </div>
+                <div class="member">
+                    <img src="Imagenes/Fundador3.jpeg" alt="Foto del Fundador 3">
+                    <h3>Vazquez Delfina</h3>
+                    <p>Fundadora y CEO</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="trust">
+        <div class="container">
+            <h2>Confían en Nosotros</h2>
+            <p>Estas son algunas de las marcas reconocidas que han confiado en ProfeLink:</p>
+            <div class="trust-logos">
+                <div class="logo-item">
+                    <img src="Imagenes/googlemeet-logo-.png" alt="Logo 1 Google Meet">
+                </div>
+                <div class="logo-item">
+                    <img src="Imagenes/Duolingo-Logo.png" alt="Logo 2 Duolingo">
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="cta">
+        <div class="container">
+            <h2>¡Únete hoy!</h2>
+            <p>Descarga la app y empieza a aprender con ProfeLink ahora mismo.</p>
+            <a href="#" class="btn">Descargar Ahora</a>
+        </div>
+    </section>
+
+    <footer class="footer">
+        <div class="container">
+            <div class="social-links">
+                <a href="#">Facebook</a>
+                <a href="#">Instagram</a>
+                <a href="#">Twitter</a>
+            </div>
+            <p>2024 ProfeLink. Todos los derechos reservados.</p>
+        </div>
+    </footer>
+
+    
+
+</body>
+
+</html>
